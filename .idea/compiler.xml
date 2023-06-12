@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="taki-cloud-common" />
+        <module name="taki-cloud-single-excel" />
         <module name="taki-cloud-single-es" />
       </profile>
     </annotationProcessing>
@@ -15,6 +16,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="taki-cloud-common" options="-parameters" />
       <module name="taki-cloud-single-es" options="-parameters" />
+      <module name="taki-cloud-single-excel" options="-parameters" />
       <module name="taki-cloud-single-starter" options="" />
     </option>
   </component>

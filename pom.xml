@@ -13,6 +13,7 @@
     <modules>
         <module>taki-cloud-common</module>
         <module>taki-cloud-single-es</module>
+        <module>taki-cloud-single-excel</module>
     </modules>
 
 
