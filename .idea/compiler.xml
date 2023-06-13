@@ -9,6 +9,7 @@
         <module name="taki-cloud-common" />
         <module name="taki-cloud-single-excel" />
         <module name="taki-cloud-single-es" />
+        <module name="taki-cloud-single-lock" />
       </profile>
     </annotationProcessing>
   </component>
@@ -17,6 +18,7 @@
       <module name="taki-cloud-common" options="-parameters" />
       <module name="taki-cloud-single-es" options="-parameters" />
       <module name="taki-cloud-single-excel" options="-parameters" />
+      <module name="taki-cloud-single-lock" options="-parameters" />
       <module name="taki-cloud-single-starter" options="" />
     </option>
   </component>
