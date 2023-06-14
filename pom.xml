@@ -15,6 +15,7 @@
         <module>taki-cloud-single-es</module>
         <module>taki-cloud-single-excel</module>
         <module>taki-cloud-single-lock</module>
+        <module>taki-cloud-single-mail</module>
     </modules>
 
 
