@@ -6,11 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="taki-cloud-single-mail" />
+        <module name="taki-cloud-single-sms" />
+        <module name="taki-cloud-single-lock" />
         <module name="taki-cloud-common" />
         <module name="taki-cloud-single-excel" />
-        <module name="taki-cloud-single-mail" />
         <module name="taki-cloud-single-es" />
-        <module name="taki-cloud-single-lock" />
+        <module name="taki-cloud-single-mq" />
+        <module name="taki-cloud-single-mybatis" />
       </profile>
     </annotationProcessing>
   </component>
@@ -21,6 +24,9 @@
       <module name="taki-cloud-single-excel" options="-parameters" />
       <module name="taki-cloud-single-lock" options="-parameters" />
       <module name="taki-cloud-single-mail" options="-parameters" />
+      <module name="taki-cloud-single-mq" options="-parameters" />
+      <module name="taki-cloud-single-mybatis" options="-parameters" />
+      <module name="taki-cloud-single-sms" options="-parameters" />
       <module name="taki-cloud-single-starter" options="" />
     </option>
   </component>

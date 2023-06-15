@@ -16,6 +16,9 @@
         <module>taki-cloud-single-excel</module>
         <module>taki-cloud-single-lock</module>
         <module>taki-cloud-single-mail</module>
+        <module>taki-cloud-single-sms</module>
+        <module>taki-cloud-single-mq</module>
+        <module>taki-cloud-single-mybatis</module>
     </modules>
 
 
