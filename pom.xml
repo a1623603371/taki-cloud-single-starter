@@ -19,6 +19,7 @@
         <module>taki-cloud-single-sms</module>
         <module>taki-cloud-single-mq</module>
         <module>taki-cloud-single-mybatis</module>
+        <module>taki-cloud-single-web3j</module>
     </modules>
 
 
@@ -86,6 +87,7 @@
         <commons-lang3.version>3.12.0</commons-lang3.version>
 
         <easypoi.version>4.4.0</easypoi.version>
+        <web3j.version> 5.0.0</web3j.version>
     </properties>
 
 
@@ -327,8 +329,22 @@
                 <version>${druid.version}</version>
                 <scope>provided</scope>
             </dependency>
+            <!--web3j-->
+            <dependency>
+                <groupId>org.web3j</groupId>
+                <artifactId>core</artifactId>
+                <version>${web3j.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.web3j/crypto -->
+            <dependency>
+                <groupId>org.web3j</groupId>
+                <artifactId>crypto</artifactId>
+                <version>${web3j.version}</version>
+            </dependency>
+
 
         </dependencies>
+
 
 
 

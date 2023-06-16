@@ -11,6 +11,7 @@
         <module name="taki-cloud-single-lock" />
         <module name="taki-cloud-common" />
         <module name="taki-cloud-single-excel" />
+        <module name="taki-cloud-single-web3j" />
         <module name="taki-cloud-single-es" />
         <module name="taki-cloud-single-mq" />
         <module name="taki-cloud-single-mybatis" />
@@ -28,6 +29,7 @@
       <module name="taki-cloud-single-mybatis" options="-parameters" />
       <module name="taki-cloud-single-sms" options="-parameters" />
       <module name="taki-cloud-single-starter" options="" />
+      <module name="taki-cloud-single-web3j" options="-parameters" />
     </option>
   </component>
 </project>

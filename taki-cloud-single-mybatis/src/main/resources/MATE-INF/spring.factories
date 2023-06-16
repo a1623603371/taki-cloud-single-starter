@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-   com.taki.cloud.mq.configuration.MessageQueueAutoConfiguration
+  com.taki.cloud.mybatis.configuration.MybatisPlusAutoConfiguration
