@@ -17,6 +17,13 @@
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>com.taki.cloud</groupId>
+            <artifactId>taki-cloud-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
         <!-- mybatis-plus -->
         <dependency>
             <groupId>com.baomidou</groupId>
@@ -42,7 +49,11 @@
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-context</artifactId>
+            <scope>provided</scope>
+        </dependency>
 
         <dependency>
             <groupId>org.projectlombok</groupId>

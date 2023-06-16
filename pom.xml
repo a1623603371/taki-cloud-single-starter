@@ -252,6 +252,7 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-context</artifactId>
                 <scope>provided</scope>
+                <version> 2.2.9.RELEASE</version>
             </dependency>
 
             <dependency>
