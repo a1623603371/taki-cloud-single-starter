@@ -20,4 +20,6 @@ public interface ScanBlockTemplate<T> {
    void scanTopic (Web3j web3j, String topic, BigInteger startBlockHeight, BigInteger endBlockHeight);
 
 
+   void hashTopic(Web3j web3j, String topic,String hash);
+
 }

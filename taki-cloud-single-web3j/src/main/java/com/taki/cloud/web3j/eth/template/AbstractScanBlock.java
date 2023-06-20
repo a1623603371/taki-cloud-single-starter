@@ -7,6 +7,7 @@ import org.web3j.abi.datatypes.Type;
 import org.web3j.protocol.Web3j;
 import org.web3j.protocol.core.methods.response.EthLog;
 import org.web3j.protocol.core.methods.response.Log;
+import org.web3j.protocol.core.methods.response.TransactionReceipt;
 
 import java.math.BigInteger;
 import java.util.List;
@@ -55,6 +56,33 @@ public abstract   class AbstractScanBlock<T>  implements ScanBlockTemplate<T> {
     }
 
 
+    @Override
+    public void hashTopic(Web3j web3j, String topic, String hash) {
+
+        TransactionReceipt transactionReceipt = EthUtil.getTransactionReceipt(web3j, hash);
+        int count = 10;
+
+        while(transactionReceipt == null && count > 0) {
+            transactionReceipt = EthUtil.getTransactionReceipt(web3j, hash);
+
+            try {
+                log.info("添加swap流动性查询次数:{},hash:{}", count, hash);
+                Thread.sleep(500L);
+                --count;
+            } catch (InterruptedException var6) {
+                throw new RuntimeException(var6);
+            }
+        }
+        log.info("添加swap流动性记录数据:,hash:{}",hash);
+        if (transactionReceipt != null && transactionReceipt.getLogs() != null) {
+            transactionReceipt.getLogs().forEach((log) -> {
+                if (topic.equals(log.getTopics().get(0))) {
+                   processBusiness(log,params());
+                }
+            });
+        }
+
+    }
 
     @Override
     public void scanTopic(Web3j web3j, String topic, BigInteger startBlockHeight, BigInteger endBlockHeight) {
