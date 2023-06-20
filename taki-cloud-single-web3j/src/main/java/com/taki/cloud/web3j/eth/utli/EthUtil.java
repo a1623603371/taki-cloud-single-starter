@@ -640,6 +640,23 @@ public class EthUtil {
         return transactions;
     }
 
+
+    /**
+     * eth_getlogs方法获取指定合约下的fromBlock、toBlock块范围内的topic下的日志
+     * @param web3j
+     * @param fromBlock
+     * @param toBlock
+     * @param contractAddress
+     * @param topic
+     * @return
+     */
+    public static EthLog ethGetLogs(Web3j web3j, BigInteger fromBlock, BigInteger toBlock, String contractAddress, String topic) throws IOException {
+        org.web3j.protocol.core.methods.request.EthFilter ethFilter = new org.web3j.protocol.core.methods.request.EthFilter(DefaultBlockParameter.valueOf(fromBlock), DefaultBlockParameter.valueOf(toBlock), contractAddress);
+        ethFilter.addSingleTopic(topic);
+        return web3j.ethGetLogs(ethFilter).send();
+    }
+
+
     /**
      * 获取当前区块高度
      */
