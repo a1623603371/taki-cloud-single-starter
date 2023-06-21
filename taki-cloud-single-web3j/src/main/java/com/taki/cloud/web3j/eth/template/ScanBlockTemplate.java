@@ -1,25 +1,26 @@
 package com.taki.cloud.web3j.eth.template;
 
-import org.web3j.abi.TypeReference;
-import org.web3j.abi.datatypes.Type;
 import org.web3j.protocol.Web3j;
 
 import java.math.BigInteger;
-import java.util.List;
 
 /**
- * @ClassName SscanBlockUtlis
+ * @ClassName ScanBlockTemplate
  * @Description TODO
  * @Author Long
- * @Date 2023/6/20 17:39
+ * @Date 2023/6/21 18:18
  * @Version 1.0
  */
-public interface ScanBlockTemplate<T> {
+public interface ScanBlockTemplate {
 
-
-   void scanTopic (Web3j web3j, String topic, BigInteger startBlockHeight, BigInteger endBlockHeight);
-
-
-   void hashTopic(Web3j web3j, String topic,String hash);
-
+    /***
+     * @description:  扫描 块 交易
+     * @param web3j
+     * @param block
+     * @param
+     * @return  void
+     * @author Long
+     * @date: 2023/6/21 18:18
+     */
+  void scanBlock(Web3j web3j, BigInteger block);
 }
