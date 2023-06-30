@@ -16,6 +16,7 @@
 
     <modules>
         <module>taki-cloud-single-starter</module>
+        <module>taki-netty-rpc-demo</module>
     </modules>
 
 

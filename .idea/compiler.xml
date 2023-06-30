@@ -14,18 +14,19 @@
         <module name="taki-cloud-single-web3j" />
         <module name="taki-cloud-single-es" />
         <module name="taki-cloud-single-mybatis" />
-        <module name="taki-cloud-singile-mq" />
+        <module name="taki-cloud-single-mq" />
+        <module name="taki-netty-rpc-demo" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="taki-cloud-common" options="-parameters" />
-      <module name="taki-cloud-singile-mq" options="-parameters" />
       <module name="taki-cloud-single-es" options="-parameters" />
       <module name="taki-cloud-single-excel" options="-parameters" />
       <module name="taki-cloud-single-lock" options="-parameters" />
       <module name="taki-cloud-single-mail" options="-parameters" />
+      <module name="taki-cloud-single-mq" options="-parameters" />
       <module name="taki-cloud-single-mybatis" options="-parameters" />
       <module name="taki-cloud-single-sms" options="-parameters" />
       <module name="taki-cloud-single-web3j" options="-parameters" />
