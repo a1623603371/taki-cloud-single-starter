@@ -1,5 +1,16 @@
 package com.taki.cloud.rpc.sevice;
 
+import com.taki.cloud.rpc.RpcEncoder;
+import com.taki.cloud.rpc.RpcRequest;
+import com.taki.cloud.rpc.RpcResponse;
+import io.netty.bootstrap.ServerBootstrap;
+import io.netty.channel.ChannelInitializer;
+import io.netty.channel.ChannelOption;
+import io.netty.channel.EventLoopGroup;
+import io.netty.channel.nio.NioEventLoopGroup;
+import io.netty.channel.socket.SocketChannel;
+import io.netty.channel.socket.nio.NioServerSocketChannel;
+import io.netty.channel.socket.nio.NioSocketChannel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -28,6 +39,25 @@ public class NettyRpcSever {
     }
 
     public void start(){
+        logger.info("netty rpc sever  starting ......");
+        EventLoopGroup bossGroup = new NioEventLoopGroup();
 
+        EventLoopGroup workGroup = new NioEventLoopGroup();
+
+        try {
+            ServerBootstrap serverBootstrap = new ServerBootstrap();
+            serverBootstrap.channel(NioServerSocketChannel.class).childHandler(new ChannelInitializer<SocketChannel>() {
+                @Override
+                protected void initChannel(SocketChannel socketChannel) throws Exception {
+                    socketChannel.pipeline().addLast(new RpcDecoder(RpcRequest.class))
+                            .addLast(new RpcEncoder(RpcResponse.class))
+                            .addLast(new NettyRpcServerHandler(serviceConfigs));
+                }
+            }).option(ChannelOption.SO_BACKLOG,128).childOption(ChannelOption.SO_KEEPALIVE,true);
+
+        }finally {
+            workGroup.shutdownGracefully();
+            bossGroup.shutdownGracefully();
+        }
     }
 }
